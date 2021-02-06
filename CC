@@ -1,0 +1,11 @@
+Generating Origin
+    export HAB_ORIGIN=yourinitials_tryhabitat
+    echo $HAB_ORIGIN
+    
+Generate Original KeyPair
+    $ hab origin key generate yourinitials_tryhabitat
+        The generated keys will live in home directory under ~/.hab/cache/keys/:
+        
+The generated keys will live in home directory under ~/.hab/cache/keys/
+    $ ls ~/hab/cache/keys/
+    
