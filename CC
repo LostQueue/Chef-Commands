@@ -11,9 +11,9 @@ The generated keys will live in home directory under ~/.hab/cache/keys/
     
 //Git Push Sequence//
 
-$ cd habitat-building-with-scaffolding/
+$ cd "Folder-Location"/
 git status
 git add habitat/plan.sh
-git commit -m "v0.2.0, obtain imagemagick pkg_deps from my origin"
+git commit -m "v0.2.0, obtain "file" pkg_deps from my origin"
 git push
 
