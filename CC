@@ -39,3 +39,45 @@ Login into machine
 Deploy changes to test kitchen
     $ kitchen converge
     
+Docker compose file
+    curl -o docker-compose.yml https://raw.githubusercontent.com/learn-chef/chef/master/docker-compose.yml
+    
+Retrieve latest workstation image
+    $ docker-compose pull
+    
+Container name error resolution
+    You can resolve such an error by running this command: docker system prune -a. Then run docker-compose pull and docker-compose up -d again.
+    
+Start interactive bash session on workstation 
+    $ docker exec -it workstation bash
+    
+First, the command is chef-run. This is a utility to run adhoc Chef Infra commands on a remote server. File and hello.txt creates a file
+    $ chef-run web1 file hello.txt //Hello.txt<INSERT ACTUAL NOT HELLO>//
+    
+Check if file is really there 
+    $ ssh web1 ls -l /hello.txt
+    
+Append content 
+    $ chef-run web1 file hello.txt content='Hello World!'
+    
+Remove File
+    $ chef-run web1 file hello.txt action=delete
+
+
+
+
+apt_update    //invokes a Chef Infra resource designed for Debian and Ubuntu systems which ensures that the package repository is up-to-date and that the packages we install will be the latest version//
+
+package 'figlet'    //will install the package. //
+
+directory '/tmp'    //ensure our temporary directory exists with directory//
+
+execute 'write_hello_world' do
+    command 'figlet Hello World! > /tmp/hello.txt'    //This is the shell command that is to be executed by the resource.//
+    not_if { File.exist?('/tmp/hello.txt') }    //This parameter is known as a guard. We use guards to provide the test part of test & repair for more generic resources.//
+end    //end indicates we are finished giving the resource parameters.//
+
+
+to stop workstaton
+    $ docker-compose down --rmi all
+
