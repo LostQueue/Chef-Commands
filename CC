@@ -20,3 +20,19 @@ git add habitat/plan.sh
 git commit -m "v0.2.0, obtain "file" pkg_deps from my origin"
 git push
 
+
+// Chef Infra Commands//
+
+Test Kitchen
+    generate cookbook
+        $ chef generate cookbook
+        
+Info for each instance in kitchen.yml
+    $ kitchen List
+    
+Create Test Instance
+    $ kitchen create
+    
+Login into machine
+    $ kitchen login <INSTANCE>
+    
