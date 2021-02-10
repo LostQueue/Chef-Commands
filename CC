@@ -10,7 +10,7 @@ The generated keys will live in home directory under ~/.hab/cache/keys/
     $ ls ~/hab/cache/keys/
     
 To enter the Clean Room
-    hab enter studio
+   $ hab enter studio
     
 //Git Push Sequence//
 
@@ -35,4 +35,7 @@ Create Test Instance
     
 Login into machine
     $ kitchen login <INSTANCE>
+    
+Deploy changes to test kitchen
+    $ kitchen converge
     
